@@ -1,0 +1,85 @@
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #000;
+}
+
+.card {
+    height: 100%;
+}
+
+.card-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.btn-primary:hover {
+    background-color: #5a32a3;
+    border-color: #5a32a3;
+}
+
+.btn-twitter {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+    color: #fff;
+}
+
+.btn-twitter:hover {
+    background-color: #0c85d0;
+    border-color: #0c85d0;
+    color: #fff;
+}
+
+.btn-tiktok {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.btn-tiktok:hover {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+}
+
+.btn-youtube {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: #fff;
+}
+
+.btn-youtube:hover {
+    background-color: #cc0000;
+    border-color: #cc0000;
+    color: #fff;
+}
+
+.btn-instagram {
+    background-color: #E1306C;
+    border-color: #E1306C;
+    color: #fff;
+}
+
+.btn-instagram:hover {
+    background-color: #c13584;
+    border-color: #c13584;
+    color: #fff;
+}
