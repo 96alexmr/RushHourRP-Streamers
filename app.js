@@ -1,7 +1,7 @@
 function displayStreamers(streamers) {
     const streamersContainer = document.getElementById("all-streamers");
     streamersContainer.innerHTML = "";
-    
+
     streamers.forEach(streamer => {
         let buttonsHTML = `
             ${streamer.twitterUrl ? `<a href="${streamer.twitterUrl}" target="_blank" class="btn btn-twitter me-2 mb-2">Twitter</a>` : ''}
@@ -9,12 +9,13 @@ function displayStreamers(streamers) {
             ${streamer.youtubeUrl ? `<a href="${streamer.youtubeUrl}" target="_blank" class="btn btn-youtube me-2 mb-2">YouTube</a>` : ''}
             ${streamer.instagramUrl ? `<a href="${streamer.instagramUrl}" target="_blank" class="btn btn-instagram mb-2">Instagram</a>` : ''}
         `;
-        
+
         streamersContainer.innerHTML += `
             <div class="col-md-4 mb-4">
                 <div class="card bg-dark text-white text-center">
                     <div class="card-img-container">
                         <img src="${streamer.image}" class="card-img-top streamer-image" alt="${streamer.name}" data-twitch-url="${streamer.twitchUrl}">
+                        <div class="live-indicator"></div>
                     </div>
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">${streamer.name}</h5>
@@ -35,6 +36,25 @@ function displayStreamers(streamers) {
             openTwitchPopup(twitchUrl);
         });
     });
+
+    const iframeContainer = document.createElement('div');
+    iframeContainer.style.display = 'none';
+
+    streamers.forEach(streamer => {
+        const iframe = document.createElement('iframe');
+        iframe.src = streamer.twitchUrl;
+        iframe.onload = function() {
+            const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
+            if (iframe.contentDocument.body.innerHTML.includes('offline')) {
+                liveIndicator.classList.remove('live');
+            } else {
+                liveIndicator.classList.add('live');
+            }
+        };
+        iframeContainer.appendChild(iframe);
+    });
+
+    document.body.appendChild(iframeContainer);
 }
 
 function openTwitchPopup(twitchUrl) {
