@@ -46,7 +46,7 @@ function displayStreamers(streamers) {
         iframe.setAttribute('muted', '');
         iframe.onload = function() {
             const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
-            if (iframe.contentDocument.body.innerHTML.includes('isLiveBroadcast')) {
+            if (isStreamerLive(iframe)) {
                 liveIndicator.classList.add('live');
             } else {
                 liveIndicator.classList.remove('live');
@@ -58,20 +58,23 @@ function displayStreamers(streamers) {
     document.body.appendChild(iframeContainer);
 }
 
-function openTwitchPopup(twitchUrl) {
-    const popup = document.createElement('div');
-    popup.classList.add('twitch-popup');
-    popup.innerHTML = `
-        <div class="twitch-popup-content">
-            <iframe src="${twitchUrl}&autoplay=true" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
-            <button class="close-btn">&times;</button>
-        </div>
-    `;
-    document.body.appendChild(popup);
+function isStreamerLive(iframe) {
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    const liveIndicatorElement = iframeDocument.querySelector('.live-indicator-container');
+    return liveIndicatorElement !== null;
+}
 
-    const closeBtn = popup.querySelector('.close-btn');
+function openTwitchPopup(twitchUrl) {
+    const twitchIframe = document.getElementById('twitch-iframe');
+    twitchIframe.src = `${twitchUrl}&autoplay=true`;
+
+    const twitchPopup = document.getElementById('twitch-popup');
+    twitchPopup.style.display = 'flex';
+
+    const closeBtn = document.getElementById('close-btn');
     closeBtn.addEventListener('click', () => {
-        popup.remove();
+        twitchPopup.style.display = 'none';
+        twitchIframe.src = '';
     });
 }
 
