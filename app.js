@@ -27,6 +27,21 @@ function displayStreamers(streamers) {
                 </div>
             </div>
         `;
+
+        const iframe = document.createElement('iframe');
+        iframe.src = streamer.twitchUrl;
+        iframe.setAttribute('muted', '');
+        iframe.style.display = 'none'; // Hide the iframe initially
+        streamersContainer.appendChild(iframe); // Append the iframe to the visible container
+
+        iframe.onload = function() {
+            const liveIndicator = streamersContainer.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
+            if (isStreamerLive(iframe)) {
+                liveIndicator.classList.add('live');
+            } else {
+                liveIndicator.classList.remove('live');
+            }
+        };
     });
 
     const streamerImages = document.querySelectorAll('.streamer-image');
@@ -36,26 +51,6 @@ function displayStreamers(streamers) {
             openTwitchPopup(twitchUrl);
         });
     });
-
-    const iframeContainer = document.createElement('div');
-    iframeContainer.style.display = 'none';
-
-    streamers.forEach(streamer => {
-        const iframe = document.createElement('iframe');
-        iframe.src = streamer.twitchUrl;
-        iframe.setAttribute('muted', '');
-        iframe.onload = function() {
-            const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
-            if (isStreamerLive(iframe)) {
-                liveIndicator.classList.add('live');
-            } else {
-                liveIndicator.classList.remove('live');
-            }
-        };
-        iframeContainer.appendChild(iframe);
-    });
-
-    document.body.appendChild(iframeContainer);
 }
 
 function isStreamerLive(iframe) {
