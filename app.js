@@ -59,9 +59,13 @@ function displayStreamers(streamers) {
 }
 
 function isStreamerLive(iframe) {
-    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-    const liveIndicatorElement = iframeDocument.querySelector('p.CoreText-sc-1txzju1-0.bfNjIO');
-    return liveIndicatorElement && liveIndicatorElement.textContent.trim() === 'LIVE';
+    try {
+        const video = iframe.contentWindow.document.querySelector('video');
+        return video && !video.paused && !video.ended;
+    } catch (e) {
+        // Handling cross-origin errors
+        return false;
+    }
 }
 
 function openTwitchPopup(twitchUrl) {
