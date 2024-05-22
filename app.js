@@ -46,7 +46,7 @@ function displayStreamers(streamers) {
         iframe.setAttribute('muted', '');
         iframe.onload = function() {
             const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
-            if (iframe.contentDocument.body.innerHTML.includes('LIVE')) {
+            if (iframe.contentDocument.body.innerHTML.includes('isLiveBroadcast')) {
                 liveIndicator.classList.add('live');
             } else {
                 liveIndicator.classList.remove('live');
