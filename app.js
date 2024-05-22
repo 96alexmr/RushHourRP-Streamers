@@ -43,6 +43,7 @@ function displayStreamers(streamers) {
     streamers.forEach(streamer => {
         const iframe = document.createElement('iframe');
         iframe.src = streamer.twitchUrl;
+        iframe.setAttribute('muted', '');
         iframe.onload = function() {
             const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
             if (iframe.contentDocument.body.innerHTML.includes('offline')) {
