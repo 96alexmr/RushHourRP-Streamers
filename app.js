@@ -46,10 +46,10 @@ function displayStreamers(streamers) {
         iframe.setAttribute('muted', '');
         iframe.onload = function() {
             const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
-            if (iframe.contentDocument.body.innerHTML.includes('is offline')) {
-                liveIndicator.classList.remove('live');
-            } else {
+            if (iframe.contentDocument.body.innerHTML.includes('LIVE')) {
                 liveIndicator.classList.add('live');
+            } else {
+                liveIndicator.classList.remove('live');
             }
         };
         iframeContainer.appendChild(iframe);
