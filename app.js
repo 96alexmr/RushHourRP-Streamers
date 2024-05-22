@@ -60,8 +60,8 @@ function displayStreamers(streamers) {
 
 function isStreamerLive(iframe) {
     const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-    const liveIndicatorElement = iframeDocument.querySelector('.live-indicator-container');
-    return liveIndicatorElement !== null;
+    const liveIndicatorElement = iframeDocument.querySelector('.tw-channel-status-text-indicator .CoreText-sc-1txzju1-0');
+    return liveIndicatorElement && liveIndicatorElement.textContent.trim() === 'LIVE';
 }
 
 function openTwitchPopup(twitchUrl) {
