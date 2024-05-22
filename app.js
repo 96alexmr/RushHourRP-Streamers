@@ -17,7 +17,7 @@ function displayStreamers(streamers) {
                     <img src="${streamer.image}" class="card-img-top streamer-image" alt="${streamer.name}">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">${streamer.name}</h5>
-                        <h6 class="card-subtitle mb-2">(${streamer.nickname})</h6>
+                        <h6 class="card-subtitle mb-2">${streamer.nickname}</h6>
                         <div class="d-flex justify-content-center flex-wrap">
                             ${iconLinksHTML}
                         </div>

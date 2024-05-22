@@ -1,7 +1,7 @@
 const streamers = [
     {
         name: "loadedwombat",
-        nickname: "Nick Ender",
+        nickname: "Nick Ender | Roy Hench",
         image: "https://static-cdn.jtvnw.net/jtv_user_pictures/bd0ff1c2-3eb4-4188-937d-d536b3aaca74-profile_image-150x150.png",
         twitchUrl: "https://www.twitch.tv/loadedwombat",
         twitterUrl: "https://twitter.com/loadedwombat",
@@ -28,7 +28,7 @@ const streamers = [
     },
     {
         name: "bigpapabrie",
-        nickname: "Peggy Smiles/Medusa",
+        nickname: "Peggy Smiles | Medusa",
         image: "https://static-cdn.jtvnw.net/jtv_user_pictures/d2346eea-474c-468c-b922-96e7bea91b22-profile_image-150x150.png",
         twitchUrl: "https://www.twitch.tv/bigpapabrie",
         twitterUrl: "https://twitter.com/Bigpapabrie",
@@ -45,6 +45,15 @@ const streamers = [
         tiktokUrl: "https://www.tiktok.com/@sheriffstrafe",
         youtubeUrl: "https://www.youtube.com/sheriffstrafe",
         instagramUrl: "https://www.instagram.com/sheriffstrafe/"
+    },
+    {
+        name: "thatgamerdude165",
+        nickname: "Terry Venables | Rick Green",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/0b958121-3df9-4eca-b8a5-1b2512f20eee-profile_image-150x150.png",
+        twitchUrl: "https://www.twitch.tv/thatgamerdude165",
+        twitterUrl: "https://twitter.com/ThatGamerDude_0",
+        tiktokUrl: "https://www.tiktok.com/@thatgamerdude165",
+        youtubeUrl: "https://www.youtube.com/channel/UCQW1NmN5pjVeWoPoM6N8PLA"
     },
     // Add more streamer objects as needed
 ];
