@@ -46,7 +46,7 @@ function displayStreamers(streamers) {
         iframe.setAttribute('muted', '');
         iframe.onload = function() {
             const liveIndicator = document.querySelector(`.streamer-image[alt="${streamer.name}"] + .live-indicator`);
-            if (iframe.contentDocument.body.innerHTML.includes('offline')) {
+            if (iframe.contentDocument.body.innerHTML.includes('is offline')) {
                 liveIndicator.classList.remove('live');
             } else {
                 liveIndicator.classList.add('live');
@@ -63,7 +63,7 @@ function openTwitchPopup(twitchUrl) {
     popup.classList.add('twitch-popup');
     popup.innerHTML = `
         <div class="twitch-popup-content">
-            <iframe src="${twitchUrl}" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+            <iframe src="${twitchUrl}&autoplay=true" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
             <button class="close-btn">&times;</button>
         </div>
     `;
