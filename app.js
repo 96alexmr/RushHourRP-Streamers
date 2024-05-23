@@ -13,7 +13,7 @@ function displayStreamers(streamers) {
 
         streamersContainer.innerHTML += `
             <div class="col-md-4 mb-4">
-                <div class="card bg-dark text-white text-center">
+                <div class="card text-center">
                     <img src="${streamer.image}" class="card-img-top streamer-image" alt="${streamer.name}">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">${streamer.name}</h5>
@@ -28,4 +28,27 @@ function displayStreamers(streamers) {
     });
 }
 
-displayStreamers(streamers);
+function toggleTheme() {
+    document.body.classList.toggle('light-theme');
+    const isLightTheme = document.body.classList.contains('light-theme');
+    localStorage.setItem('theme', isLightTheme ? 'light' : 'dark');
+}
+
+function applyTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        document.getElementById('theme-toggle').checked = true;
+    } else {
+        document.body.classList.remove('light-theme');
+        document.getElementById('theme-toggle').checked = false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    displayStreamers(streamers);
+    applyTheme();
+
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('change', toggleTheme);
+});

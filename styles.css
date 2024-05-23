@@ -1,10 +1,49 @@
 body {
     background-color: #1a1a1a;
     color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
 .navbar {
-    background-color: #000;
+    background-color: #212529;
+    transition: background-color 0.3s ease;
+}
+
+.light-theme .navbar {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.light-theme .navbar-brand {
+    color: #212529;
+}
+
+.theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle {
+    margin: 0 10px;
+}
+
+.theme-toggle .form-check-input {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.theme-toggle .form-check-label {
+    margin-left: 0;
 }
 
 .card {
@@ -12,6 +51,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #212529;
+    transition: background-color 0.3s ease;
+}
+
+.light-theme .card {
+    background-color: #fff;
 }
 
 .card-img-top {
@@ -26,12 +71,32 @@ body {
     flex-grow: 1;
 }
 
+.card-title {
+    color: #fff;
+}
+
+.light-theme .card-title {
+    color: #212529;
+}
+
+.card-subtitle {
+    color: #fff;
+}
+
+.light-theme .card-subtitle {
+    color: #6c757d;
+}
+
 .icon-link {
     color: #fff;
     font-size: 24px;
     margin: 0 5px;
     transition: color 0.3s ease;
     text-decoration: none;
+}
+
+.light-theme .icon-link {
+    color: #212529;
 }
 
 .icon-link:hover {
