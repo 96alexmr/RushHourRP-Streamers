@@ -11,7 +11,7 @@ const streamers = [
     },
     {
         name: "yourboyynick",
-        nickname: "Pablo",
+        nickname: "Pablo Jimenez | Pedro Carnitas",
         image: "https://static-cdn.jtvnw.net/jtv_user_pictures/4d836bde-748c-4403-aeb2-3a22d6bcec3a-profile_image-150x150.png",
         twitchUrl: "https://www.twitch.tv/yourboyynick",
         twitterUrl: "https://twitter.com/Yourboyynick",
