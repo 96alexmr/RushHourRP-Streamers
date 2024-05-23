@@ -61,5 +61,13 @@ const streamers = [
         image: "https://static-cdn.jtvnw.net/jtv_user_pictures/870ebe3c-a2b9-47c8-b844-5e35f5111558-profile_image-150x150.png",
         twitchUrl: "https://www.twitch.tv/grimx910"
     },
+    {
+        name: "sal_ezzy",
+        nickname: "Sal",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/987f761b-1ae5-444c-8cdc-b62750373f51-profile_image-150x150.png",
+        twitchUrl: "https://www.twitch.tv/sal_ezzy",
+        twitterUrl: "https://twitter.com/Sal_ezzyTv",
+        tiktokUrl: "https://www.tiktok.com/@lunchmoneygg"
+    },
     // Add more streamer objects as needed
 ];
