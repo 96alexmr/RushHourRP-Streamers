@@ -55,5 +55,11 @@ const streamers = [
         tiktokUrl: "https://www.tiktok.com/@thatgamerdude165",
         youtubeUrl: "https://www.youtube.com/channel/UCQW1NmN5pjVeWoPoM6N8PLA"
     },
+    {
+        name: "grimx910",
+        nickname: "GRIM",
+        image: "https://static-cdn.jtvnw.net/jtv_user_pictures/870ebe3c-a2b9-47c8-b844-5e35f5111558-profile_image-150x150.png",
+        twitchUrl: "https://www.twitch.tv/grimx910"
+    },
     // Add more streamer objects as needed
 ];
